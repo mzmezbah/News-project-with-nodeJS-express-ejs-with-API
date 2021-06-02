@@ -4,19 +4,19 @@ const axios = require('axios')
 newsRoute.get('', async(req,res)=>{
     try {
         const newsApi = await axios.get('https://raddy.co.uk/wp-json/wp/v2/posts/')
-        res.render('news',{ articales : newsApi.data })
+        res.render('news',{ articles : newsApi.data })
         
     } catch (err) {
         if(err.response){
-            res.render('news',{ articales : null })
+            res.render('news',{ articles : null })
             console.log(err.response.data)
             console.log(err.response.status)
             console.log(err.response.header)
-        }else if(err.requiest){
-            res.render('news',{ articales : null })
-            console.log(err.requiest)
+        }else if(err.request){
+            res.render('news',{ articles : null })
+            console.log(err.request)
         }else{
-            res.render('news',{ articales : null })
+            res.render('news',{ articles : null })
             console.error('Error',err.message)
         }
     }
@@ -28,20 +28,20 @@ newsRoute.get('/:id', async(req,res)=>{
     try {
 
         const newsApi = await axios.get(`https://raddy.co.uk/wp-json/wp/v2/posts/${newsId}`)
-        res.render('SingleNews',{ articale : newsApi.data })
+        res.render('SingleNews',{ article : newsApi.data })
 
         
     } catch (err) {
         if(err.response){
-            res.render('SingleNews',{ articale : null })
+            res.render('SingleNews',{ article : null })
             console.log(err.response.data)
             console.log(err.response.status)
             console.log(err.response.header)
         }else if(err.request){
-            res.render('SingleNews',{ articale : null })
+            res.render('SingleNews',{ article : null })
             console.log(err.request)
         }else{
-            res.render('SingleNews',{ articale : null })
+            res.render('SingleNews',{ article : null })
             console.error('Error',err.message)
         }
     }
@@ -53,20 +53,20 @@ newsRoute.post('', async(req,res)=>{
     try {
 
         const newsApi = await axios.get(`https://raddy.co.uk/wp-json/wp/v2/posts?search=${search}`)
-        res.render('newsSearch',{ articales : newsApi.data })
+        res.render('newsSearch',{ articles : newsApi.data })
 
         
     } catch (err) {
         if(err.response){
-            res.render('newsSearch',{ articales : null })
+            res.render('newsSearch',{ articles : null })
             console.log(err.response.data)
             console.log(err.response.status)
             console.log(err.response.header)
         }else if(err.request){
-            res.render('newsSearch',{ articales : null })
+            res.render('newsSearch',{ articles : null })
             console.log(err.request)
         }else{
-            res.render('newsSearch',{ articales : null })
+            res.render('newsSearch',{ articles : null })
             console.error('Error',err.message)
         }
     }

@@ -5,14 +5,14 @@
 <div class="wrapper">
     <div class="news">
         
-    <% if(articales != null){ %>
+    <% if(articles != null){ %>
 
-        <% articales.forEach( function(articales,index) {  %>
+        <% articles.forEach( function(articles,index) {  %>
 
-        <a href="/articale/<%- articales.id %>" class="news__card"> 
-        <img src="<%- articales.thumbnail_url %>" alt="<%- articales.title.rendered %>">
-        <h2><%- articales.title.rendered %></h2>
-        <p> <%- articales.excerpt.rendered %> </p>
+        <a href="/articale/<%- articles.id %>" class="news__card"> 
+        <img src="<%- articles.thumbnail_url %>" alt="<%- articles.title.rendered %>">
+        <h2><%- articles.title.rendered %></h2>
+        <p> <%- articles.excerpt.rendered %> </p>
 
         </a>
         

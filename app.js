@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended : true}))
 
 const newsRoute = require('./src/route/news')
 
-app.use('/articale', newsRoute)
+app.use('/article', newsRoute)
 app.use('/', newsRoute)
 
 
